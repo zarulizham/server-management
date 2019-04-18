@@ -21,8 +21,8 @@ class WebhookController extends Controller
 
 
 
-        shell_exec('/usr/bin/git stash');
-        shell_exec('/usr/bin/git pull');
+
+        $out = shell_exec('cd .. && /usr/bin/git stash && /usr/bin/git pull');
 
         // var_dump($matches[0]);
 
