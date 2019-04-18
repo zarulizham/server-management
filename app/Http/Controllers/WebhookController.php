@@ -11,6 +11,6 @@ class WebhookController extends Controller
     {
         Storage::disk('local')->put('abu.txt', json_encode($request->all()));
 
-        echo "K";
+        echo "K k";
     }
 }
