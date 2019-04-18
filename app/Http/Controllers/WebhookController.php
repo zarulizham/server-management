@@ -12,7 +12,7 @@ class WebhookController extends Controller
         Storage::disk('local')->put('abu.txt', json_encode($request->all()));
 
 
-        // $text = '[This] is a [test] string, [eat] my [shorts].';
+        $text = '[This] is a [test] string, [eat] my [shorts].';
         // preg_match_all("/[[^]]*]/", $text, $matches);
 
 
