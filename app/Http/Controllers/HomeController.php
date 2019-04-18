@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $process = new Process(['whoami']);
+        $process = new Process(['php -v']);
         $process->run();
 
         dd($process->getOutput());
