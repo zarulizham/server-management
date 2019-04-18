@@ -12,12 +12,17 @@ class WebhookController extends Controller
         Storage::disk('local')->put('abu.txt', json_encode($request->all()));
 
 
-        $text = '[This] is a [test] string, [eat] my [shorts].';
-        // preg_match_all("/[[^]]*]/", $text, $matches);
+        $commitMessage = $request->commits[0]['message'];
 
 
-        exec('/usr/bin/git stash');
-        exec('/usr/bin/git pull');
+        // $commitMessage = '[This] is a [test] string, [eat] my [shorts].';
+        preg_match_all("/[[^]]*]/", $commitMessage, $matches);
+
+
+
+
+        shell_exec('/usr/bin/git stash');
+        shell_exec('/usr/bin/git pull');
 
         // var_dump($matches[0]);
 
